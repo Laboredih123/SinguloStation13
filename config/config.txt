@@ -16,7 +16,7 @@ $include atmos_mix.txt
 # Which explicitly disables LOG_TWITTER, as well as locking it.
 # There are various options which are hard-locked for security reasons.
 
-## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'White Sands' with the name of your choice.
+## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'Singulostation 13' with the name of your choice.
 # SERVERNAME Singulostation 13
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.

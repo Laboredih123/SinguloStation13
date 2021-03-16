@@ -238,13 +238,13 @@
 	config_entry_value = "https://forum.white-sands.space"
 
 /datum/config_entry/string/rulesurl
-	config_entry_value = "https://wiki.white-sands.space/Rules"
+	config_entry_value = "https://wiki.white-sands.space/Rules"//When we get a rules page add something here - MaltVinegar
 
 /datum/config_entry/string/githuburl
-	config_entry_value = "https://github.com/Whitesands13/Whitesands"
+	config_entry_value = "https://github.com/SinguloStation13/SinguloStation13"
 
 /datum/config_entry/string/discordurl
-	config_entry_value = "https://discord.gg/BUM8uRc"
+	config_entry_value = "https://discord.gg/J5EVWPGV76"
 
 /datum/config_entry/string/centcom_ban_db	// URL for the CentCom Galactic Ban DB API
 

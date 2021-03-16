@@ -17,10 +17,10 @@ $include atmos_mix.txt
 # There are various options which are hard-locked for security reasons.
 
 ## Server name: This appears at the top of the screen in-game and in the BYOND hub. Uncomment and replace 'White Sands' with the name of your choice.
-# SERVERNAME White Sands
+# SERVERNAME Singulostation 13
 
 ## Server SQL name: This is the name used to identify the server to the SQL DB, distinct from SERVERNAME as it must be at most 32 characters.
-# SERVERSQLNAME whitesands
+# SERVERSQLNAME singulostation
 
 ## Station name: The name of the station as it is referred to in-game. If commented out, the game will generate a random name instead.
 STATIONNAME Space Station 13
@@ -422,7 +422,7 @@ AUTOADMIN_RANK Game Master
 
 
 ## Uncomment to automatically deadmin players when the game starts.
-#AUTO_DEADMIN_PLAYERS
+AUTO_DEADMIN_PLAYERS
 
 ## Uncomment to automatically deadmin antagonists when they gain the role.
 AUTO_DEADMIN_ANTAGONISTS

@@ -10,6 +10,7 @@
 	density = TRUE
 	layer = ABOVE_WINDOW_LAYER
 	pipe_flags = PIPING_ONE_PER_TURF
+	can_unwrench = TRUE
 
 	var/volume = 10000 //in liters
 	var/gas_type = 0

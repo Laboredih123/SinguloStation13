@@ -30,12 +30,17 @@ GLOBAL_LIST_INIT(atmos_pipe_recipes, list(
 		new /datum/pipe_info/pipe("Injector",			/obj/machinery/atmospherics/components/unary/outlet_injector),
 		new /datum/pipe_info/pipe("Scrubber",			/obj/machinery/atmospherics/components/unary/vent_scrubber),
 		new /datum/pipe_info/pipe("Unary Vent",			/obj/machinery/atmospherics/components/unary/vent_pump),
+		new /datum/pipe_info/pipe("Large Unary Vent",	/obj/machinery/atmospherics/components/unary/vent_pump/high_volume),
 		new /datum/pipe_info/pipe("Passive Vent",		/obj/machinery/atmospherics/components/unary/passive_vent),
 		new /datum/pipe_info/pipe("Manual Valve",		/obj/machinery/atmospherics/components/binary/valve),
 		new /datum/pipe_info/pipe("Digital Valve",		/obj/machinery/atmospherics/components/binary/valve/digital),
 		new /datum/pipe_info/pipe("Relief Valve (Binary)",		/obj/machinery/atmospherics/components/binary/relief_valve), //WS Edit - Port of Relief Valves from Cit
 		new /datum/pipe_info/pipe("Relief Valve (Unary)",		/obj/machinery/atmospherics/components/unary/relief_valve), //WS Edit - Port of Relief Valves from Cit
 		new /datum/pipe_info/meter("Meter"),
+		new /datum/pipe_info/pipe("Dual-port Air Vent",			/obj/machinery/atmospherics/components/binary/dp_vent_pump),
+		new /datum/pipe_info/pipe("Large Dual-port Air Vent",	/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume),
+		new /datum/pipe_info/pipe("Pressure Tank",		/obj/machinery/atmospherics/components/unary/tank),
+
 	),
 	"Heat Exchange" = list(
 		new /datum/pipe_info/pipe("Pipe",				/obj/machinery/atmospherics/pipe/heat_exchanging/simple),

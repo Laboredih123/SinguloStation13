@@ -15,6 +15,7 @@
 	desc = "Has a valve and pump attached to it. There are two ports."
 
 	hide = TRUE
+	can_unwrench = TRUE
 
 	var/frequency = 0
 	var/id = null

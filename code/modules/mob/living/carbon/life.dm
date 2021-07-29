@@ -209,20 +209,18 @@
 				Unconscious(60)
 		if(prob(20))
 			emote("gasp")
-
-	else
+	else if(CO2_percentage_in_air > yawning_co2_max_percent)
 		co2overloadtime = 0
-	if(CO2_percentage_in_air > safe_co2_max_percent && CO2_percentage_in_air <= yawning_co2_max_percent)
+		if(prob(20))
+				emote("yawn")
+				to_chat(owner, "<span class='warning'>You're feeling pretty tired</span>")
+			owner.drowsyness += 10
+	else if(CO2_percentage_in_air > safe_co2_max_percent)
+		co2overloadtime = 0
 		if(prob(20))
 			emote("sigh")
 			to_chat(owner, "<span class='warning'>You're feeling a bit tired</span>")
 		owner.drowsyness += 5
-	else if(CO2_percentage_in_air > yawning_co2_max_percent)
-		if(prob(20))
-			emote("yawn")
-			to_chat(owner, "<span class='warning'>You're feeling pretty tired</span>")
-		owner.drowsyness += 10
-
 
 	//TOXINS/PLASMA
 	if(Toxins_partialpressure > safe_tox_max)

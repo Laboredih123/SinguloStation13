@@ -186,42 +186,39 @@
 			adjustOxyLoss(5*ratio+(((world.time - lowoxytime)/20)))
 			failed_last_breath = 1
 			oxygen_used = breath.get_moles(/datum/gas/oxygen)*ratio
-		throw_alert("not_enough_oxy", /obj/screen/alert/not_enough_oxy)
 	else
 		failed_last_breath = 0
 		lowoxytime = 0
 		if(health >= crit_threshold)
 			adjustOxyLoss(-5)
 		oxygen_used = breath.get_moles(/datum/gas/oxygen)
-		clear_alert("not_enough_oxy")
 
 	breath.adjust_moles(/datum/gas/oxygen, -oxygen_used)
 	breath.adjust_moles(/datum/gas/carbon_dioxide, oxygen_used)
 
 	//CARBON DIOXIDE
-	if(CO2_percentage_in_air > lethal_co2_max_percent)
-		if(!co2overloadtime)
-			co2overloadtime = world.time
-		else if(world.time - co2overloadtime > 120)
-			adjustToxLoss(3)
-			if(world.time - co2overloadtime > 300)
-				adjustToxLoss(8)
-				Unconscious(60)
-		if(prob(20))
-			emote("gasp")
-	else if(CO2_percentage_in_air > yawning_co2_max_percent)
-		co2overloadtime = 0
-		if(prob(20))
-				emote("yawn")
-				to_chat(owner, "<span class='warning'>You're feeling pretty tired</span>")
-			owner.drowsyness += 10
-	else if(CO2_percentage_in_air > safe_co2_max_percent)
-		co2overloadtime = 0
-		if(prob(20))
-			emote("sigh")
-			to_chat(owner, "<span class='warning'>You're feeling a bit tired</span>")
-		owner.drowsyness += 5
-
+	if(CO2_percentage_in_air > danger_co2_max_percent)
+		throw_alert("not_enough_oxy", /obj/screen/alert/not_enough_oxy)
+		if(CO2_percentage_in_air > lethal_co2_max_percent)
+			src.drowsyness += 20
+			src.apply_damage_type(10, TOX) //tox bc rl shit
+			if(prob(20))
+				emote("gasp")
+		else
+			src.drowsyness += 15
+			src.apply_damage_type(5, TOX)
+			if(prob(20))
+				emote("cough")
+	else
+		clear_alert("not_enough_oxy", /obj/screen/alert/not_enough_oxy)
+		if(CO2_percentage_in_air > safe_co2_max_percent)
+			if(CO2_percentage_in_air > yawning_co2_max_percent)
+				if(prob(20))
+					emote("yawn")
+				src.apply_damage_type(1, TOX)
+		else
+			if(prob(20))
+					emote("sigh")
 	//TOXINS/PLASMA
 	if(Toxins_partialpressure > safe_tox_max)
 		var/ratio = (breath.get_moles(/datum/gas/plasma)/safe_tox_max) * 10

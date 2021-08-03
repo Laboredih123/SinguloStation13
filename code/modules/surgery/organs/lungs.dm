@@ -160,9 +160,10 @@
 	gas_breathed = 0
 
 	//-- CO2 --//
+	//Yeeted lmao
 
 	//CO2 does not affect failed_last_breath. So if there was enough oxygen in the air but too much co2, this will hurt you, but only once per 4 ticks, instead of once per tick.
-	if(safe_co2_max)
+	/* if(safe_co2_max)
 		if(CO2_pp > safe_co2_max)
 			if(!H.co2overloadtime) // If it's the first breath with too much CO2 in it, lets start a counter, then have them pass out after 12s or so.
 				H.co2overloadtime = world.time
@@ -189,7 +190,7 @@
 			if(H.health >= H.crit_threshold)
 				H.adjustOxyLoss(-5)
 			gas_breathed = breath.get_moles(/datum/gas/carbon_dioxide)
-			H.clear_alert("not_enough_co2")
+			H.clear_alert("not_enough_co2") */
 
 	//Exhale
 	breath.adjust_moles(/datum/gas/carbon_dioxide, -gas_breathed)

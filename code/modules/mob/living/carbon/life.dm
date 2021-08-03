@@ -218,7 +218,7 @@
 				src.apply_damage_type(1, TOX)
 		else
 			if(prob(20))
-					emote("sigh")
+				emote("sigh")
 	//TOXINS/PLASMA
 	if(Toxins_partialpressure > safe_tox_max)
 		var/ratio = (breath.get_moles(/datum/gas/plasma)/safe_tox_max) * 10

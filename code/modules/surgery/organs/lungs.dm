@@ -118,13 +118,13 @@
 	if(safe_oxygen_min)
 		if(O2_pp < safe_oxygen_min)
 			gas_breathed = handle_too_little_breath(H, O2_pp, safe_oxygen_min, breath.get_moles(/datum/gas/oxygen))
-			H.throw_alert("not_enough_oxy", /obj/screen/alert/not_enough_oxy)
+			//H.throw_alert("not_enough_oxy", /obj/screen/alert/not_enough_oxy)
 		else
 			H.failed_last_breath = FALSE
 			if(H.health >= H.crit_threshold)
 				H.adjustOxyLoss(-5)
 			gas_breathed = breath.get_moles(/datum/gas/oxygen)
-			H.clear_alert("not_enough_oxy")
+			//H.clear_alert("not_enough_oxy")
 
 	//Exhale
 	breath.adjust_moles(/datum/gas/oxygen, -gas_breathed)

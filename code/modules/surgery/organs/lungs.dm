@@ -85,7 +85,8 @@
 
 		H.failed_last_breath = TRUE
 		if(safe_oxygen_min)
-			H.throw_alert("not_enough_oxy", /obj/screen/alert/not_enough_oxy)
+			//H.throw_alert("not_enough_oxy", /obj/screen/alert/not_enough_oxy)
+			return 0
 		else if(safe_toxins_min)
 			H.throw_alert("not_enough_tox", /obj/screen/alert/not_enough_tox)
 		else if(safe_co2_min)

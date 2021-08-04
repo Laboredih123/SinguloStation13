@@ -157,7 +157,7 @@
 		adjustOxyLoss(1)
 
 		failed_last_breath = 1
-		throw_alert("not_enough_oxy", /obj/screen/alert/not_enough_oxy)
+		//throw_alert("not_enough_oxy", /obj/screen/alert/not_enough_oxy)
 		return 0
 
 	var/safe_oxy_min = 16
@@ -200,25 +200,33 @@
 	if(CO2_percentage_in_air > danger_co2_max_percent)
 		throw_alert("not_enough_oxy", /obj/screen/alert/not_enough_oxy)
 		if(CO2_percentage_in_air > lethal_co2_max_percent)
-			src.drowsyness += 20
-			src.apply_damage_type(10, TOX) //tox bc rl shit
+			drowsyness += 20
+			dizziness += 10
+			adjustToxLoss(10) //tox bc rl shit
 			if(prob(20))
 				emote("gasp")
+				to_chat(src, "<span class='userdanger'>You're gasping for fresh air!.</span>")
 		else
-			src.drowsyness += 15
-			src.apply_damage_type(5, TOX)
+			drowsyness += 10
+			dizziness += 5
+			adjustToxLoss(5)
 			if(prob(20))
 				emote("cough")
-	else
-		clear_alert("not_enough_oxy", /obj/screen/alert/not_enough_oxy)
-		if(CO2_percentage_in_air > safe_co2_max_percent)
-			if(CO2_percentage_in_air > yawning_co2_max_percent)
-				if(prob(20))
-					emote("yawn")
-				src.apply_damage_type(1, TOX)
+				to_chat(src, "<span class='danger'>Every breath you take hurts!.</span>")
+	else if(CO2_percentage_in_air > safe_co2_max_percent)
+		clear_alert("not_enough_oxy") //Peacefully ignorant
+		if(CO2_percentage_in_air > yawning_co2_max_percent)
+			if(prob(20))
+				emote("yawn")
+			drowsyness += 2
+			dizziness += 1
+			adjustToxLoss(1)
 		else
+			drowsyness += 1
 			if(prob(20))
 				emote("sigh")
+	else
+		clear_alert("not_enough_oxy")
 	//TOXINS/PLASMA
 	if(Toxins_partialpressure > safe_tox_max)
 		var/ratio = (breath.get_moles(/datum/gas/plasma)/safe_tox_max) * 10

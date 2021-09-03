@@ -4,16 +4,17 @@
 	icon_state = "generic"
 
 	name = "pressure tank"
-	desc = "A large vessel containing pressurized gas."
+	desc = "A large vessel containing pressurized gas. Unable to be unwrenched."
 
 	max_integrity = 800
 	density = TRUE
 	layer = ABOVE_WINDOW_LAYER
 	pipe_flags = PIPING_ONE_PER_TURF
-	can_unwrench = TRUE
 
 	var/volume = 10000 //in liters
 	var/gas_type = 0
+
+	pipe_state = "ptank"
 
 /obj/machinery/atmospherics/components/unary/tank/New()
 	..()

@@ -21,25 +21,25 @@ GLOBAL_LIST_INIT(atmos_pipe_recipes, list(
 		new /datum/pipe_info/pipe("Layer Manifold",		/obj/machinery/atmospherics/pipe/layer_manifold),
 	),
 	"Devices" = list(
-		new /datum/pipe_info/pipe("Connector",			/obj/machinery/atmospherics/components/unary/portables_connector),
-		new /datum/pipe_info/pipe("Gas Pump",			/obj/machinery/atmospherics/components/binary/pump),
-		new /datum/pipe_info/pipe("Volume Pump",		/obj/machinery/atmospherics/components/binary/volume_pump),
-		new /datum/pipe_info/pipe("Gas Filter",			/obj/machinery/atmospherics/components/trinary/filter),
-		new /datum/pipe_info/pipe("Gas Mixer",			/obj/machinery/atmospherics/components/trinary/mixer),
-		new /datum/pipe_info/pipe("Passive Gate",		/obj/machinery/atmospherics/components/binary/passive_gate),
-		new /datum/pipe_info/pipe("Injector",			/obj/machinery/atmospherics/components/unary/outlet_injector),
-		new /datum/pipe_info/pipe("Scrubber",			/obj/machinery/atmospherics/components/unary/vent_scrubber),
-		new /datum/pipe_info/pipe("Unary Vent",			/obj/machinery/atmospherics/components/unary/vent_pump),
-		new /datum/pipe_info/pipe("Large Unary Vent",	/obj/machinery/atmospherics/components/unary/vent_pump/high_volume),
-		new /datum/pipe_info/pipe("Passive Vent",		/obj/machinery/atmospherics/components/unary/passive_vent),
-		new /datum/pipe_info/pipe("Manual Valve",		/obj/machinery/atmospherics/components/binary/valve),
-		new /datum/pipe_info/pipe("Digital Valve",		/obj/machinery/atmospherics/components/binary/valve/digital),
+		new /datum/pipe_info/pipe("Connector",					/obj/machinery/atmospherics/components/unary/portables_connector),
+		new /datum/pipe_info/pipe("Gas Pump",					/obj/machinery/atmospherics/components/binary/pump),
+		new /datum/pipe_info/pipe("Volume Pump",				/obj/machinery/atmospherics/components/binary/volume_pump),
+		new /datum/pipe_info/pipe("Gas Filter",					/obj/machinery/atmospherics/components/trinary/filter),
+		new /datum/pipe_info/pipe("Gas Mixer",					/obj/machinery/atmospherics/components/trinary/mixer),
+		new /datum/pipe_info/pipe("Passive Gate",				/obj/machinery/atmospherics/components/binary/passive_gate),
+		new /datum/pipe_info/pipe("Injector",					/obj/machinery/atmospherics/components/unary/outlet_injector),
+		new /datum/pipe_info/pipe("Scrubber",					/obj/machinery/atmospherics/components/unary/vent_scrubber),
+		new /datum/pipe_info/pipe("Unary Vent",					/obj/machinery/atmospherics/components/unary/vent_pump),
+		new /datum/pipe_info/pipe("Large Unary Vent",			/obj/machinery/atmospherics/components/unary/vent_pump/high_volume),
+		new /datum/pipe_info/pipe("Passive Vent",				/obj/machinery/atmospherics/components/unary/passive_vent),
+		new /datum/pipe_info/pipe("Manual Valve",				/obj/machinery/atmospherics/components/binary/valve),
+		new /datum/pipe_info/pipe("Digital Valve",				/obj/machinery/atmospherics/components/binary/valve/digital),
 		new /datum/pipe_info/pipe("Relief Valve (Binary)",		/obj/machinery/atmospherics/components/binary/relief_valve), //WS Edit - Port of Relief Valves from Cit
 		new /datum/pipe_info/pipe("Relief Valve (Unary)",		/obj/machinery/atmospherics/components/unary/relief_valve), //WS Edit - Port of Relief Valves from Cit
 		new /datum/pipe_info/meter("Meter"),
-		new /datum/pipe_info/pipe("Dual-port Air Vent",			/obj/machinery/atmospherics/components/binary/dp_vent_pump),
+		new /datum/pipe_info/pipe("Dual-port Air Vent",			/obj/machinery/atmospherics/components/binary/dp_vent_pump), //Singulostation Edit Begin - More devices.
 		new /datum/pipe_info/pipe("Large Dual-port Air Vent",	/obj/machinery/atmospherics/components/binary/dp_vent_pump/high_volume),
-		new /datum/pipe_info/pipe("Pressure Tank",		/obj/machinery/atmospherics/components/unary/tank),
+		new /datum/pipe_info/pipe("Pressure Tank",				/obj/machinery/atmospherics/components/unary/tank), //Singulostation Edit End - More devices.
 
 	),
 	"Heat Exchange" = list(
@@ -76,8 +76,8 @@ GLOBAL_LIST_INIT(transit_tube_recipes, list(
 	"Station Equipment" = list(
 		new /datum/pipe_info/transit("Through Tube Station",		/obj/structure/c_transit_tube/station, PIPE_STRAIGHT),
 		new /datum/pipe_info/transit("Terminus Tube Station",		/obj/structure/c_transit_tube/station/reverse, PIPE_UNARY),
-		new /datum/pipe_info/transit("Through Tube Dispenser Station",		/obj/structure/c_transit_tube/station/dispenser, PIPE_STRAIGHT),      //Singulostation edit - Buildable transit tube dispenser stations 
-		new /datum/pipe_info/transit("Terminus Tube Dispenser Station",		/obj/structure/c_transit_tube/station/dispenser/reverse, PIPE_UNARY), //Singulostation edit - Buildable transit tube dispenser stations 
+		new /datum/pipe_info/transit("Through Tube Dispenser Station",		/obj/structure/c_transit_tube/station/dispenser, PIPE_STRAIGHT),      //Singulostation edit - Buildable transit tube dispenser stations
+		new /datum/pipe_info/transit("Terminus Tube Dispenser Station",		/obj/structure/c_transit_tube/station/dispenser/reverse, PIPE_UNARY), //Singulostation edit - Buildable transit tube dispenser stations
 		new /datum/pipe_info/transit("Transit Tube Pod",			/obj/structure/c_transit_tube_pod, PIPE_ONEDIR),
 	)
 ))

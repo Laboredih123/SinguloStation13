@@ -37,7 +37,7 @@
 	//EXT_BOUND: Do not pass external_pressure_bound
 	//INPUT_MIN: Do not pass input_pressure_min
 	//OUTPUT_MAX: Do not pass output_pressure_max
-	construction_type = /obj/item/pipe/directional
+	
 	pipe_state = "dpvent"
 
 obj/machinery/atmospherics/components/binary/dp_vent_pump/New()

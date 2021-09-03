@@ -290,6 +290,17 @@
 	pipe_vision_img.plane = ABOVE_HUD_PLANE
 	playsound(loc, 'sound/weapons/bladeslice.ogg', 100, TRUE)
 
+/obj/machinery/atmospherics/components/unary/vent_scrubber/high_volume
+	name = "large scrubber"
+	idle_power_usage = 40
+	active_power_usage = 240
+
+/obj/machinery/atmospherics/components/unary/vent_scrubber/high_volume/New()
+	..()
+	var/datum/gas_mixture/air_contents = airs[1]
+	air_contents.set_volume(1000)
+
+//Mapping
 
 /obj/machinery/atmospherics/components/unary/vent_scrubber/layer1
 	piping_layer = 1

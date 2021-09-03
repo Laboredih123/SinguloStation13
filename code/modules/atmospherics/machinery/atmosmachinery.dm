@@ -37,7 +37,7 @@
 	var/device_type = 0
 	var/list/obj/machinery/atmospherics/nodes
 
-	var/construction_type
+	var/construction_type //What type of pipe is this pipe? Necessary for RPD and unwrenching
 	var/pipe_state //icon_state as a pipe item
 	var/on = FALSE
 

@@ -4,6 +4,9 @@
 #define INPUT_MIN	2
 #define OUTPUT_MAX	4
 
+#define SIPHONING	0
+#define RELEASING	1
+
 /obj/machinery/atmospherics/components/binary/dp_vent_pump
 	icon = 'icons/obj/atmospherics/components/unary_devices.dmi' //We reuse the normal vent icons!
 	icon_state = "dpvent_map-2"
@@ -21,7 +24,7 @@
 	var/id = null
 	var/datum/radio_frequency/radio_connection
 
-	var/pump_direction = 1 //0 = siphoning, 1 = releasing
+	var/pump_direction = RELEASING
 
 	var/external_pressure_bound = ONE_ATMOSPHERE
 	var/input_pressure_min = 0
@@ -34,8 +37,11 @@
 	//EXT_BOUND: Do not pass external_pressure_bound
 	//INPUT_MIN: Do not pass input_pressure_min
 	//OUTPUT_MAX: Do not pass output_pressure_max
-
+	construction_type = /obj/item/pipe/directional
 	pipe_state = "dpvent"
+
+obj/machinery/atmospherics/components/binary/dp_vent_pump/New()
+	..()
 
 /obj/machinery/atmospherics/components/binary/dp_vent_pump/Destroy()
 	SSradio.remove_object(src, frequency)
@@ -157,11 +163,11 @@
 
 	if("purge" in signal.data)
 		pressure_checks &= ~1
-		pump_direction = 0
+		pump_direction = SIPHONING
 
 	if("stabilize" in signal.data)
 		pressure_checks |= 1
-		pump_direction = 1
+		pump_direction = RELEASING
 
 	if("set_input_pressure" in signal.data)
 		input_pressure_min = clamp(text2num(signal.data["set_input_pressure"]),0,ONE_ATMOSPHERE*50)
@@ -244,3 +250,6 @@
 #undef EXT_BOUND
 #undef INPUT_MIN
 #undef OUTPUT_MAX
+
+#undef SIPHONING
+#undef RELEASING
